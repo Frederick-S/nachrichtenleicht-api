@@ -4,7 +4,7 @@ jdk:
 services:
   - mysql
 env:
-  - MYSQL_USER=root MYSQL_PASSWORD=
+  - MYSQL_USER=root MYSQL_PWD=
 before_install:
   - mysql -e "create database nachrichtenleicht_test;" --user=root
   - chmod +x gradlew
