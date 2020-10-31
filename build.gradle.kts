@@ -5,6 +5,21 @@ plugins {
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     kotlin("jvm") version "1.3.72"
     kotlin("plugin.spring") version "1.3.72"
+    jacoco
+}
+
+apply(plugin = "jacoco")
+
+jacoco {
+    toolVersion = "0.8.3"
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.isEnabled = true
+        csv.isEnabled = false
+        html.destination = file("${buildDir}/jacocoHtml")
+    }
 }
 
 group = "nachrichtenleicht"
