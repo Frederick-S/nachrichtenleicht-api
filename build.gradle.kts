@@ -24,7 +24,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation("org.jsoup:jsoup:1.13.1")
     implementation("com.apptastic:rssreader:2.3.1")
-    implementation("junit:junit:4.12")
+    implementation("mysql:mysql-connector-java:8.0.22")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
