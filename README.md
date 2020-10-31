@@ -1,1 +1,1 @@
-# nachrichtenleicht-api
+# nachrichtenleicht-api [![Build status](https://ci.appveyor.com/api/projects/status/hc99xfxmvoco8kmi/branch/main?svg=true)](https://ci.appveyor.com/project/Frederick-S/nachrichtenleicht-api/branch/main)
