@@ -2,6 +2,7 @@ package nachrichtenleicht.service
 
 import com.apptastic.rssreader.Item
 import nachrichtenleicht.entity.News
+import nachrichtenleicht.entity.Word
 import org.jsoup.Jsoup
 import org.springframework.stereotype.Service
 import java.time.Instant
@@ -21,6 +22,14 @@ class NewsParser {
         news.publishedAtUtc = item.pubDateZonedDateTime
                 .map { date -> date.toInstant() }
                 .orElse(Instant.MIN)
+        news.words = document.select(".dra-lsp-artikel-woerterbuch-begriff li")
+                .map { element ->
+                    val word = Word()
+                    word.name = element.child(0).text()
+                    word.definition = element.textNodes()[0].text()
+
+                    word
+                }.toMutableSet()
 
         return news
     }

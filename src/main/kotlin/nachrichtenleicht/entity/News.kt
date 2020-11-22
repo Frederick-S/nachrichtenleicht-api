@@ -10,10 +10,10 @@ class News : BaseEntity() {
     var title = ""
 
     @Column(length = 1000)
-    var description = "";
+    var description = ""
 
     @Column(length = 200)
-    var url = "";
+    var url = ""
 
     @Column(length = 200)
     var imageUrl = ""
@@ -23,5 +23,8 @@ class News : BaseEntity() {
 
     var publishedAtUtc = Instant.now()
 
-    var type = 0;
+    var type = 0
+
+    @Transient
+    var words = mutableSetOf<Word>()
 }
