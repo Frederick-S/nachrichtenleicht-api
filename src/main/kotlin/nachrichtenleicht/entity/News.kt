@@ -22,4 +22,6 @@ class News : BaseEntity() {
     var body = ""
 
     var publishedAtUtc = Instant.now()
+
+    var type = 0;
 }
