@@ -16,9 +16,10 @@ class NewsController : BaseController() {
     lateinit var newsRepository: NewsRepository
 
     @GetMapping("/news")
-    fun getNews(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) startDate: Date,
-                @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) endDate: Date,
-                @RequestParam type: Int): List<NewsDto> {
+    fun getNews(
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) startDate: Date,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) endDate: Date,
+            @RequestParam type: Int): List<NewsDto> {
         return newsRepository.findByPublishedAtUtcBetweenAndType(startDate.toInstant(), endDate.toInstant(), type)
                 .map { news ->
                     val dto = NewsDto()
