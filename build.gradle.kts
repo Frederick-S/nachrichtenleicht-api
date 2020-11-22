@@ -33,9 +33,11 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.3")
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation("org.jsoup:jsoup:1.13.1")
     implementation("com.apptastic:rssreader:2.3.1")
