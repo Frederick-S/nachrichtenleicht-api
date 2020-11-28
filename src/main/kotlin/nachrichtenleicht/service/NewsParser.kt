@@ -19,6 +19,7 @@ class NewsParser {
         news.imageUrl = document.select(".dra-lsp-artikel-haupttext-bild").attr("src")
         news.body = document.select(".dra-lsp-artikel-haupttext-absatz p")
                 .joinToString("\n") { element -> element.text() }
+        news.audioUrl = document.select(".player-download").attr("href")
         news.publishedAtUtc = item.pubDateZonedDateTime
                 .map { date -> date.toInstant() }
                 .orElse(Instant.MIN)

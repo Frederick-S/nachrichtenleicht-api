@@ -21,6 +21,9 @@ class News : BaseEntity() {
     @Column(columnDefinition = "text")
     var body = ""
 
+    @Column(length = 200)
+    var audioUrl = ""
+
     var publishedAtUtc = Instant.now()
 
     var type = 0

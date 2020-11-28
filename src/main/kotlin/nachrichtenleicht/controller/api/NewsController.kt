@@ -30,6 +30,7 @@ class NewsController : BaseController() {
                     dto.body = news.body
                     dto.publishedAtUtc = news.publishedAtUtc
                     dto.type = news.type
+                    dto.audioUrl = news.audioUrl
 
                     dto
                 }

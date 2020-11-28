@@ -13,6 +13,8 @@ class NewsDto {
 
     var body = ""
 
+    var audioUrl = ""
+
     var publishedAtUtc = Instant.now()
 
     var type = 0
