@@ -23,6 +23,7 @@ class NewsController : BaseController() {
         return newsRepository.findByPublishedAtUtcBetweenAndType(startDate.toInstant(), endDate.toInstant(), type)
                 .map { news ->
                     val dto = NewsDto()
+                    dto.id = news.id
                     dto.title = news.title
                     dto.description = news.description
                     dto.url = news.url
