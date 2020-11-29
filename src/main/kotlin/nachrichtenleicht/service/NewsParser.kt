@@ -17,8 +17,7 @@ class NewsParser {
         news.description = document.select(".dra-lsp-artikel-haupttex-kurztext").text()
         news.url = url
         news.imageUrl = document.select(".dra-lsp-artikel-haupttext-bild").attr("src")
-        news.body = document.select(".dra-lsp-artikel-haupttext-absatz p")
-                .joinToString("\n") { element -> element.text() }
+        news.body = document.select(".dra-lsp-artikel-haupttext-absatz").html()
         news.audioUrl = document.select(".player-download").attr("href")
         news.publishedAtUtc = item.pubDateZonedDateTime
                 .map { date -> date.toInstant() }
