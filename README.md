@@ -5,7 +5,7 @@ API of [nachrichtenleicht-mobile](https://github.com/Frederick-S/nachrichtenleic
 ### Docker
 ```sh
 docker run -e MYSQL_ROOT_PASSWORD=your-mysql-root-password \
-  -e MYSQL_DATABASE=nhk -e MYSQL_USER=your-mysql-user \
+  -e MYSQL_DATABASE=nachrichtenleicht -e MYSQL_USER=your-mysql-user \
   -e MYSQL_PASSWORD=your-mysql-user-password \
   -p 3306:3306 \
   -d mysql:8
