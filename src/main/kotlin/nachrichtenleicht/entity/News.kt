@@ -6,7 +6,7 @@ import javax.persistence.Entity
 
 @Entity
 class News : BaseEntity() {
-    @Column(length = 50)
+    @Column(length = 100)
     var title = ""
 
     @Column(length = 1000)
