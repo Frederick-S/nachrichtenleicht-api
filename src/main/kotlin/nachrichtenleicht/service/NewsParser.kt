@@ -20,16 +20,16 @@ class NewsParser {
         news.body = document.select(".dra-lsp-artikel-haupttext-absatz").html()
         news.audioUrl = document.select(".player-download").attr("href")
         news.publishedAtUtc = item.pubDateZonedDateTime
-                .map { date -> date.toInstant() }
-                .orElse(Instant.MIN)
+            .map { date -> date.toInstant() }
+            .orElse(Instant.MIN)
         news.words = document.select(".dra-lsp-artikel-woerterbuch-begriff li")
-                .map { element ->
-                    val word = Word()
-                    word.name = element.child(0).text()
-                    word.definition = element.textNodes()[0].text()
+            .map { element ->
+                val word = Word()
+                word.name = element.child(0).text()
+                word.definition = element.textNodes()[0].text()
 
-                    word
-                }.toMutableSet()
+                word
+            }.toMutableSet()
 
         return news
     }

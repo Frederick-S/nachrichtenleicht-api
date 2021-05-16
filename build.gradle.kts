@@ -1,13 +1,23 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+buildscript {
+    repositories {
+        maven("https://plugins.gradle.org/m2/")
+    }
+    dependencies {
+        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.0.0")
+    }
+}
+
 plugins {
     id("org.springframework.boot") version "2.3.4.RELEASE"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
-    kotlin("jvm") version "1.3.72"
-    kotlin("plugin.spring") version "1.3.72"
+    kotlin("jvm") version "1.4.32"
+    kotlin("plugin.spring") version "1.4.32"
     jacoco
 }
 
+apply(plugin = "org.jlleitschuh.gradle.ktlint")
 apply(plugin = "jacoco")
 
 jacoco {
@@ -18,7 +28,7 @@ tasks.jacocoTestReport {
     reports {
         xml.isEnabled = true
         csv.isEnabled = false
-        html.destination = file("${buildDir}/jacocoHtml")
+        html.destination = file("$buildDir/jacocoHtml")
     }
 }
 

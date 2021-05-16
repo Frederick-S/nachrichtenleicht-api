@@ -21,12 +21,12 @@ class NewsTask {
         logger.info("Start to fetch news, now={}", ZonedDateTime.now())
 
         NewsType.values()
-                .forEach { newsType ->
-                    try {
-                        newsService.fetchAndSaveNews(newsType)
-                    } catch (e: Exception) {
-                        logger.error("Fetch news failed, newsType={}", newsType, e)
-                    }
+            .forEach { newsType ->
+                try {
+                    newsService.fetchAndSaveNews(newsType)
+                } catch (e: Exception) {
+                    logger.error("Fetch news failed, newsType={}", newsType, e)
                 }
+            }
     }
 }

@@ -31,8 +31,8 @@ class NewsService {
         val items = rssReader.read(newsType.feedUrl)
 
         return items.map { item -> newsParser.parse(item) }
-                .peek { news -> news.type = newsType.type }
-                .toList()
+            .peek { news -> news.type = newsType.type }
+            .toList()
     }
 
     @Transactional
@@ -67,13 +67,13 @@ class NewsService {
         val wordNameIdMap = words.associateBy({ it.name }, { it.id })
         val newsWords = newsList.flatMap { news ->
             news.words
-                    .map { word ->
-                        val newsWord = NewsWord()
-                        newsWord.newsId = news.id
-                        newsWord.wordId = wordNameIdMap.getOrDefault(word.name, 0)
+                .map { word ->
+                    val newsWord = NewsWord()
+                    newsWord.newsId = news.id
+                    newsWord.wordId = wordNameIdMap.getOrDefault(word.name, 0)
 
-                        newsWord
-                    }
+                    newsWord
+                }
         }
 
         newsWordRepository.saveAll(newsWords)
