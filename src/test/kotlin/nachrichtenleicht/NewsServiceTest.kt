@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired
 
 class NewsServiceTest : BaseTest() {
     @Autowired
-    lateinit var newsService: NewsService
+    private lateinit var newsService: NewsService
 
     @Autowired
-    lateinit var newsRepository: NewsRepository
+    private lateinit var newsRepository: NewsRepository
 
     @Test
     fun shouldFetchNews() {
