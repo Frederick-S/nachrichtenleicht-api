@@ -15,16 +15,16 @@ import kotlin.streams.toList
 @Service
 class NewsService {
     @Autowired
-    lateinit var newsParser: NewsParser
+    private lateinit var newsParser: NewsParser
 
     @Autowired
-    lateinit var newsRepository: NewsRepository
+    private lateinit var newsRepository: NewsRepository
 
     @Autowired
-    lateinit var wordRepository: WordRepository
+    private lateinit var wordRepository: WordRepository
 
     @Autowired
-    lateinit var newsWordRepository: NewsWordRepository
+    private lateinit var newsWordRepository: NewsWordRepository
 
     fun fetchNews(newsType: NewsType): List<News> {
         val rssReader = RssReader()

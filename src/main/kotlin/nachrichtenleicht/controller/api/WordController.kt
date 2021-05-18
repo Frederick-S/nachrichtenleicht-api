@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class WordController : BaseController() {
     @Autowired
-    lateinit var newsWordRepository: NewsWordRepository
+    private lateinit var newsWordRepository: NewsWordRepository
 
     @Autowired
-    lateinit var wordRepository: WordRepository
+    private lateinit var wordRepository: WordRepository
 
     @GetMapping("/words")
     fun getWords(@RequestParam newsId: Int): List<WordDto> {

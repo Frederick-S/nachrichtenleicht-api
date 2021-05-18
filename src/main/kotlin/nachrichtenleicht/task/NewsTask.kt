@@ -14,7 +14,7 @@ class NewsTask {
     private val logger: Logger = LoggerFactory.getLogger(NewsTask::class.java)
 
     @Autowired
-    lateinit var newsService: NewsService
+    private lateinit var newsService: NewsService
 
     @Scheduled(cron = "0 0 14 * * FRI", zone = "UTC")
     fun saveTopNews() {
