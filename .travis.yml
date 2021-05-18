@@ -8,6 +8,8 @@ env:
 before_install:
   - mysql -e "create database nachrichtenleicht_test;" --user=root
   - chmod +x gradlew
+before_script:
+  - ./gradlew build
 script:
   - ./gradlew test jacocoTestReport
   - bash <(curl -s https://codecov.io/bash)
